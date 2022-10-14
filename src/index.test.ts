@@ -31,6 +31,7 @@ describe("router", () => {
       );
 
       const contacts = document.getElementById("contacts") as HTMLElement;
+      const root = document.getElementById("root") as HTMLElement;
       expect(contacts.style.fontStyle).toBe("italic");
       expect(routerListeners.length).toBe(2);
       let url = "/contacts";
@@ -38,6 +39,7 @@ describe("router", () => {
 
       expect(contacts.style.color).toBe("blue");
       expect(go).toBe("/contacts");
+      expect(root.textContent).toBe("contacts");
       url = "/about";
       router.go(url, { url });
       const about = document.getElementById("about") as HTMLElement;
